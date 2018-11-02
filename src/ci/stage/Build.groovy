@@ -1,7 +1,7 @@
 package ci.stage
 
 def call(displayTestResults, failBuildOnMissingResults, displayCoverage, updateDependencies){
-    stage ("Build") {
+    return stage ("Build") {
         command = "gradlew clean build" + (updateDependencies ? "--update-dependencies" : "")
         bat command
 
